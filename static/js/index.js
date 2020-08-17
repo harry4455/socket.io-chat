@@ -15,10 +15,10 @@ socket.on('connect', function() {
 })
 
 // 서버로부터 데이터를 받은 경우
-socket.on('update'), function(data){
-    var chat = document.getElementById('chat');
+socket.on('update', function(data){
+    var chat = document.getElementById('chat')
 
-    var message = document.createElement('div');
+    var message = document.createElement('div')
     var node = document.createTextNode(`${data.name}: ${data.message}`)
     var className = ''
 
@@ -41,8 +41,8 @@ socket.on('update'), function(data){
     message.appendChild(node)
     chat.appendChild(message)
 
-    console.log(`${data.name}: ${data.message}`)
-}
+    // console.log(`${data.name}: ${data.message}`)
+})
 
 // 전송하는 함수
 function send(){

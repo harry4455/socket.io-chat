@@ -4,6 +4,7 @@ const express = require('express');
 const socket = require('socket.io');
 // Node.js 기본 내장 모듈 불러오기
 const http = require('http');
+// Node.js 기본 내장 모듈 불러오기
 const fs = require('fs');
 // express 객체 생성
 const app = express();
@@ -15,7 +16,7 @@ const io = socket(server);
 app.use('/css', express.static('./static/css'))
 app.use('/js', express.static('./static/js'))
 
-// GET 방식으로 경로에 접속하면 실행 가능
+// GET 방식으로 / 경로에 접속하면 실행 가능
 app.get('/', function(request, response){
     fs.readFile('./static/index.html', function(err, data) {
         if(err) {
